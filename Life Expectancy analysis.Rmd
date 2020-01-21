@@ -1,0 +1,24 @@
+---
+title: "Life expectancy analysis"
+author: "Baihua Huang"
+date: "r Sys.Data()"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Analysis
+
+```{r}
+library(gapminder)
+library(tidyverse)
+ data ("gapminder_unfiltered")
+ gapminder_unfiltered %>%
+   group_by(year) %>%
+   filter(lifeEXp == max(lifeExp)) %>%
+   arrange(year)
+
+```
+# plot 
